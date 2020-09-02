@@ -1,20 +1,28 @@
 package com.douglasfreire.cadastro_clientes.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class UserNaturalPerson extends User {
 
+//    private Long id;
     private String rg;
     private String cpf;
 
     public UserNaturalPerson(){}
 
-    public UserNaturalPerson(String nome, String email, String telefone, String cep, String estado, String cidade, String bairro, String rua, String numero, String complemento, String rg, String cpf) {
-        super(nome, email, telefone, cep, estado, cidade, bairro, rua, numero, complemento);
-        this.rg = rg;
-        this.cpf = cpf;
-    }
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
 
     public String getRg() {
         return rg;
