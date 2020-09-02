@@ -13,9 +13,12 @@ import java.util.Optional;
 @RequestMapping(value = "/api")
 public class UserNaturalPersonResource {
 
+    private UserNaturalPersonRepository userNaturalPersonRepository;
 
     @Autowired
-    private UserNaturalPersonRepository userNaturalPersonRepository;
+    public UserNaturalPersonResource(UserNaturalPersonRepository userNaturalPersonRepository ){
+        this.userNaturalPersonRepository = userNaturalPersonRepository;
+    }
 
 
     @GetMapping("/pessoa_fisica")
