@@ -1,28 +1,15 @@
 package com.douglasfreire.cadastro_clientes.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
 public class UserNaturalPerson extends User {
 
-//    private Long id;
     private String rg;
     private String cpf;
 
     public UserNaturalPerson(){}
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
 
     public String getRg() {
         return rg;
@@ -40,4 +27,11 @@ public class UserNaturalPerson extends User {
         this.cpf = cpf;
     }
 
+    @Override
+    public String toString() {
+        return "UserNaturalPerson{" +
+                "rg='" + rg + '\'' +
+                ", cpf='" + cpf + '\'' +
+                '}';
+    }
 }
