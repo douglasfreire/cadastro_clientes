@@ -8,20 +8,11 @@ import javax.persistence.Id;
 @Entity
 public class UserLegalEntity extends User {
 
-//    private Long id;
+
     private String razaoSocial;
     private String cnpj;
     private String nomeFantasia;
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
 
     public String getRazaoSocial() {
         return razaoSocial;

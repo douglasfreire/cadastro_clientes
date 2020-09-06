@@ -4,14 +4,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
 
 @MappedSuperclass
 public class User {
 
     private Long id;
+    @NotEmpty
     private String nome;
+    @NotEmpty(message = "Required field")
+    @Email(message = "Invalid email format")
     private String email;
+    @NotEmpty
     private String senha;
     private boolean ativo;
     private String telefone;

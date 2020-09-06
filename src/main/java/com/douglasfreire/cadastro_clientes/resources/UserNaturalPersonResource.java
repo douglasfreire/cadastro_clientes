@@ -3,12 +3,12 @@ package com.douglasfreire.cadastro_clientes.resources;
 import com.douglasfreire.cadastro_clientes.error.ResourceNotFoundException;
 import com.douglasfreire.cadastro_clientes.model.UserNaturalPerson;
 import com.douglasfreire.cadastro_clientes.repository.UserNaturalPersonRepository;
-import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,7 +38,7 @@ public class UserNaturalPersonResource {
     }
 
     @PostMapping("/pessoa_fisica")
-    public ResponseEntity<UserNaturalPerson> save(@RequestBody UserNaturalPerson userNaturalPerson) {
+    public ResponseEntity<UserNaturalPerson> save(@Valid @RequestBody UserNaturalPerson userNaturalPerson) {
         return new ResponseEntity<>(userNaturalPersonRepository.save(userNaturalPerson), HttpStatus.CREATED) ;
 
     }
@@ -51,7 +51,7 @@ public class UserNaturalPersonResource {
     }
 
     @PutMapping("/pessoa_fisica")
-    public ResponseEntity<UserNaturalPerson> update(@RequestBody UserNaturalPerson userNaturalPerson){
+    public ResponseEntity<UserNaturalPerson> update(@Valid @RequestBody UserNaturalPerson userNaturalPerson){
         verifyIfIdExists(userNaturalPerson.getId());
         return new ResponseEntity<>(userNaturalPersonRepository.save(userNaturalPerson), HttpStatus.OK);
     }

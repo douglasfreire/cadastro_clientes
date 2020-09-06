@@ -1,11 +1,14 @@
 package com.douglasfreire.cadastro_clientes.model;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class UserNaturalPerson extends User {
 
+    @NotEmpty
     private String rg;
+    @NotEmpty
     private String cpf;
 
     public UserNaturalPerson(){}
